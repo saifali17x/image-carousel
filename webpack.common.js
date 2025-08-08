@@ -1,23 +1,35 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-module.exports = {
+const isProd = process.env.NODE_ENV === 'production';
+
+export default {
   entry: './src/index.js',
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js', // matches package.json "main": "dist/index.js"
+    path: path.resolve(process.cwd(), 'dist'),
     clean: true,
+    library: {
+      name: 'DropdownMenu',
+      type: 'umd',
+      export: 'default',
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/template.html',
     }),
+    ...(isProd ? [new MiniCssExtractPlugin({ filename: 'styles.css' })] : []),
   ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader',
+        ],
       },
       {
         test: /\.html$/i,
@@ -26,7 +38,13 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext]',
+        },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js'],
   },
 };

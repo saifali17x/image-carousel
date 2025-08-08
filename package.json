@@ -1,7 +1,8 @@
 {
   "name": "image-carousel-saifali17x",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
+  "type": "module",
   "main": "dist/main.js",
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
