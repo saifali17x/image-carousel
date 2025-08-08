@@ -1,5 +1,5 @@
 {
-  "name": "image-carousel",
+  "name": "image-carousel-saifali17x",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:saifali17x/image-carousel.git"
+    "url": "git@github.com:saifali17x/image-carousel-saifali17x.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "git@github.com:saifali17x/image-carousel.git"
+    "url": "git@github.com:saifali17x/image-carousel-saifali17x.git"
   },
   "homepage": "https://github.com/saifali17x/template-project#readme",
   "devDependencies": {
