@@ -11,7 +11,7 @@ export default {
     path: path.resolve(process.cwd(), 'dist'),
     clean: true,
     library: {
-      name: 'DropdownMenu',
+      name: 'ImageCarousel',
       type: 'umd',
     },
   },

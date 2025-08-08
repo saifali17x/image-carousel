@@ -10,6 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig([
   {
     files: ['**/*.js'],
+    ignores: ['dist/**', 'node_modules/**'],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'module',
