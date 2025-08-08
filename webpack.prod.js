@@ -4,4 +4,13 @@ import common from './webpack.common.js';
 export default merge(common, {
   mode: 'production',
   devtool: 'source-map',
+  plugins: [], // Remove HTML plugin for library build
+  output: {
+    library: {
+      name: 'ImageCarousel',
+      type: 'umd',
+      export: 'createCarousel',
+    },
+    globalObject: 'this',
+  },
 });

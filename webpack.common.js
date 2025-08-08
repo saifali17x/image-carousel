@@ -1,5 +1,4 @@
 import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -16,9 +15,6 @@ export default {
     },
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/template.html',
-    }),
     ...(isProd ? [new MiniCssExtractPlugin({ filename: 'styles.css' })] : []),
   ],
   module: {
