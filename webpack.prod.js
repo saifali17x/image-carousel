@@ -9,7 +9,6 @@ export default merge(common, {
     library: {
       name: 'ImageCarousel',
       type: 'umd',
-      export: 'createCarousel',
     },
     globalObject: 'this',
   },
